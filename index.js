@@ -13,6 +13,7 @@ const urlDatabase = {};
 app.post("/api/shorten", (req, res) => {
   const { originalUrl } = req.body;
   const shortUrl = "http://localhost:3002/" + shortid.generate();
+
   urlDatabase[shortUrl] = originalUrl;
   res.json({ shortUrl });
 });
