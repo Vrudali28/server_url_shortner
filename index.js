@@ -20,11 +20,11 @@ app.post("/api/shorten", (req, res) => {
 app.get("/:shortUrl", (req, res) => {
   const { shortUrl } = req.params;
   const originalUrl = urlDatabase[shortUrl];
-  if (originalUrl) {
-    res.redirect(originalUrl);
-  } else {
-    res.status(404).json({ error: "URL not found" });
-  }
+if (originalUrl) {
+  res.redirect(originalUrl);
+} else {
+  res.status(404).json({ error: "URL not found" });
+}
 });
 
 const PORT = 5000;
